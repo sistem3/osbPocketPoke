@@ -1,0 +1,28 @@
+app-evolutions {
+  .pokeEvol {
+    border-top: 1px solid $color-black;
+
+    .pokeListItem {
+      padding-bottom: 30px;
+    }
+
+    li {
+      h3, h4, h5 {
+        margin-top: 0;
+      }
+
+      h3, h4 {
+        margin-top: 15px;
+      }
+
+      h5 {
+        margin-top: 40px;
+      }
+
+      p {
+        display: block;
+        margin: 0 !important;
+      }
+    }
+  }
+}

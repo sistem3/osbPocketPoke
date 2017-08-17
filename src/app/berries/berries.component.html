@@ -1,0 +1,47 @@
+<section *ngIf="!loading" class="pokeDex pokeBerries container-fluid">
+  <ul class="pokeList row list-inline">
+    <li *ngFor="let berry of berries" class="pokeListItem col-lg-3 col-md-4 col-sm-6">
+      <h3>{{ berry.name }}</h3>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <h4 (click)="berry.statsHidden = !berry.statsHidden">Stats <i class="fa pull-right" [ngClass]="{'fa-chevron-down' : !berry.statsHidden, 'fa-chevron-up' : berry.statsHidden}"></i></h4>
+            <ul class="list-unstyled" *ngIf="berry.statsHidden">
+              <li>Size: {{ berry.size }}</li>
+              <li>Max Harvest: {{ berry.max_harvest }}</li>
+              <li>Firmness: {{ berry.firmness.name }}</li>
+              <li>Smoothness: {{ berry.smoothness }}</li>
+              <li>Soil Dryness: {{ berry.soil_dryness }}</li>
+              <li>Growth Time: {{ berry.growth_time }}</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h4 (click)="berry.flavorHidden = !berry.flavorHidden">Flavours <i class="fa pull-right" [ngClass]="{'fa-chevron-down' : !berry.flavorHidden, 'fa-chevron-up' : berry.flavorHidden}"></i></h4>
+            <ul class="list-unstyled" *ngIf="berry.flavorHidden">
+              <li *ngFor="let flavor of berry.flavors">
+                {{ flavor.flavor.name }} <span>{{ flavor.potency }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Natural Gift </h4>
+            <div class="typeHolder">
+              <div class="typeIcon type-{{berry.natural_gift_type.name}}" title="Type: {{berry.natural_gift_type.name}}">
+                <i class="poke-icon poke-icon-{{berry.natural_gift_type.name}}"></i>
+              </div>
+            </div>
+            Power: {{berry.natural_gift_power}}
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="pokeListItem col-lg-3 col-md-4 col-sm-6">
+      <div id="berries-loading-trigger" class="img-holder text-center">
+        <div class="spriteBg"></div>
+      </div>
+      <h2>Loading...</h2>
+    </li>
+  </ul>
+</section>

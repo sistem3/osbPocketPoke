@@ -1,0 +1,16 @@
+<section *ngIf="!loading" class="pokeEvol pokeLocations container-fluid">
+  <ul class="pokeList row list-inline">
+    <li *ngFor="let location of locations" class="pokeListItem col-lg-3 col-md-4 col-sm-6">
+      <h3><i class="fa fa-map-marker"></i> {{ location.name }}</h3>
+      <p>Region: {{ location.region.name }}</p>
+      <h4 (click)="location.areasHidden = !location.areasHidden">Areas: <span class="pull-right"><i class="fa" [ngClass]="{'fa-angle-down' : !location.areasHidden, 'fa-angle-up' : location.areasHidden}"></i></span></h4>
+      <ul *ngIf="location.areasHidden" class="locations-list">
+        <li *ngFor="let area of location.areas">{{ area.name }}</li>
+      </ul>
+    </li>
+    <li class="pokeListItem col-lg-3 col-md-4 col-sm-6">
+      <div id="locations-loading-trigger" class="img-holder text-center"></div>
+      <h2>Loading...</h2>
+    </li>
+  </ul>
+</section>

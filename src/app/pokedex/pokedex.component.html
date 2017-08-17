@@ -1,0 +1,50 @@
+<section *ngIf="!loading" class="pokeDex container-fluid">
+  <ul class="pokeList row list-inline">
+    <li *ngFor="let poke of pokemon" class="pokeListItem col-lg-3 col-md-4 col-sm-6">
+      <div id="sprite-{{poke.name}}" class="img-holder text-center">
+        <div *ngIf="!poke.showFemale">
+          <img *ngIf="!poke.showBack" src="{{poke.sprites.front_default}}" alt="{{poke.name}}" title="{{poke.name}}" />
+          <img *ngIf="poke.showBack" src="{{poke.sprites.back_default}}" alt="{{poke.name}}" title="{{poke.name}}" />
+          <div (click)="poke.showBack = true" *ngIf="!poke.showBack" class="spriteBackBtn"><i class="fa fa-chevron-right"></i></div>
+          <div (click)="poke.showBack = false" *ngIf="poke.showBack" class="spriteFrontBtn"><i class="fa fa-chevron-left"></i></div>
+        </div>
+        <div *ngIf="poke.showFemale">
+          <img *ngIf="!poke.showFemBack" src="{{poke.sprites.front_female}}" alt="{{poke.name}}" title="{{poke.name}}" />
+          <img *ngIf="poke.showFemBack" src="{{poke.sprites.back_female}}" alt="{{poke.name}}" title="{{poke.name}}" />
+          <div (click)="poke.showFemBack = true" *ngIf="!poke.showFemBack" class="spriteBackBtn"><i class="fa fa-chevron-right"></i></div>
+          <div (click)="poke.showFemBack = false" *ngIf="poke.showFemBack" class="spriteFrontBtn"><i class="fa fa-chevron-left"></i></div>
+        </div>
+        <div (click)="poke.showFemale = !poke.showFemale" *ngIf="poke.sprites.front_female" class="sexToggle" [ngClass]="{'male' : poke.showFemale, 'female' : !poke.showFemale}">
+          <i class="fa" [ngClass]="{'fa-female' : !poke.showFemale, 'fa-male' : poke.showFemale}"></i>
+        </div>
+        <div  *ngIf="poke.sprites.front_female" class="shinyToggle">
+          <i class="fa fa-diamond"></i> <span>Shiny</span>
+        </div>
+        <div class="typeHolder">
+          <div *ngFor="let type of poke.types" class="typeIcon type-{{type.type.name}}" title="Type: {{type.type.name}}">
+            <i class="poke-icon poke-icon-{{type.type.name}}"></i>
+          </div>
+        </div>
+        <div class="spriteBg"></div>
+      </div>
+      <h2>{{ poke.name }}
+        <span title="More info">
+            <i class="fa fa-info-circle"></i>
+        </span>
+        <span class="pull-right pokeball-holder" title="Capture Pokémon" (click)="capturePokemon(poke)">
+            <i class="poke-icon poke-icon-pokeball-open"></i>
+            <span class="top-half"></span>
+            <span class="bottom-half"></span>
+            <span class="center"></span>
+        </span>
+      </h2>
+      <p><strong>Height:</strong> {{ poke.height }} | <strong>Weight:</strong> {{ poke.weight }} | <strong>Base XP:</strong> {{ poke.base_experience }}</p>
+    </li>
+    <li class="pokeListItem col-lg-3 col-md-4 col-sm-6">
+      <div id="loading-trigger" class="img-holder text-center">
+        <div class="spriteBg"></div>
+      </div>
+      <h2>Loading...</h2>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,27 @@
+<nav class="container">
+  <ul class="list-inline">
+    <li class="list-inline-item"><button class="btn btn-primary" (click)="navHidden = !navHidden"><i class="fa fa-bars"></i></button></li>
+    <li *ngIf="!navHidden" class="list-inline-item">
+      <button class="btn btn-primary" routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <i class="poke-icon poke-icon-pokeball-open"></i> Pokemon
+      </button>
+    </li>
+    <li *ngIf="!navHidden" class="list-inline-item">
+      <button class="btn btn-primary" [routerLink]="['/evolutions']" [routerLinkActive]="['active']">
+        <i class="poke-icon poke-icon-strain"></i> Evolutions
+      </button>
+    </li>
+    <li *ngIf="!navHidden" class="list-inline-item">
+      <button class="btn btn-primary" [routerLink]="['/locations']" [routerLinkActive]="['active']">
+        <i class="fa fa-map-marker"></i> Locations
+      </button>
+    </li>
+    <li *ngIf="!navHidden" class="list-inline-item">
+      <button class="btn btn-primary" [routerLink]="['/berries']" [routerLinkActive]="['active']">
+        <i class="poke-icon poke-icon-berry"></i> Berries
+      </button>
+    </li>
+    <li class="list-inline-item" (click)="navHidden = !navHidden"><i class="navToggle fa" [ngClass]="{'fa-angle-right' : navHidden, 'fa-angle-left' : !navHidden}"></i></li>
+    <li class="list-inline-item"><h1 *ngIf="navHidden"><i class="poke-icon poke-icon-pokeball"></i> PocketPoké</h1></li>
+  </ul>
+</nav>

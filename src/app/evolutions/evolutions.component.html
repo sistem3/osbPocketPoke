@@ -1,0 +1,58 @@
+<section *ngIf="!loading" class="pokeEvol container-fluid">
+  <ul class="pokeList row list-inline">
+    <li *ngFor="let evolution of evolutions" class="text-center pokeListItem col-lg-3 col-md-4 col-sm-6">
+      <article class="chain">
+        <div class="row">
+          <div class="col-md-4 text-right">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ evolution.chain.species.url.split('/')[6] }}.png" />
+          </div>
+          <div class="col-md-8 text-left">
+            <h5>{{ evolution.chain.species.name }}</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12"><i class="fa fa-angle-down"></i></div>
+        </div>
+        <div *ngIf="evolution.chain.evolves_to[0]">
+          <div class="row">
+            <div class="col-md-4 text-right">
+              <img *ngIf="evolution.chain.evolves_to[0].species" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ evolution.chain.evolves_to[0].species.url.split('/')[6] }}.png" />
+            </div>
+            <div class="col-md-8 text-left">
+              <h4 *ngIf="evolution.chain.evolves_to[0].species">{{ evolution.chain.evolves_to[0].species.name }}</h4>
+              <p *ngIf="evolution.chain.evolves_to[0].evolution_details[0].trigger">Trigger = {{ evolution.chain.evolves_to[0].evolution_details[0].trigger.name }}</p>
+              <p>
+                <span *ngIf="evolution.chain.evolves_to[0].evolution_details[0].min_level">Min-Level = {{ evolution.chain.evolves_to[0].evolution_details[0].min_level }}</span>
+                <span *ngIf="evolution.chain.evolves_to[0].evolution_details[0].min_happiness">Min-Happiness = {{ evolution.chain.evolves_to[0].evolution_details[0].min_happiness }}</span>
+                <span *ngIf="evolution.chain.evolves_to[0].evolution_details[0].min_beauty">Min-Beauty = {{ evolution.chain.evolves_to[0].evolution_details[0].min_beauty }}</span>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div *ngIf="evolution.chain.evolves_to[0].evolves_to[0]" class="col-md-12"><i class="fa fa-angle-down"></i></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 text-right">
+              <img *ngIf="evolution.chain.evolves_to[0].evolves_to[0]" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ evolution.chain.evolves_to[0].evolves_to[0].species.url.split('/')[6] }}.png" />
+            </div>
+            <div class="col-md-8 text-left">
+              <h3 *ngIf="evolution.chain.evolves_to[0].evolves_to[0]">{{ evolution.chain.evolves_to[0].evolves_to[0].species.name }}</h3>
+              <p *ngIf="evolution.chain.evolves_to[0].evolves_to[0]">Trigger = {{ evolution.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name }}</p>
+              <p *ngIf="evolution.chain.evolves_to[0].evolves_to[0]">
+                <span *ngIf="evolution.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level">Min-Level = {{ evolution.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level }}</span>
+                <span *ngIf="evolution.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_happiness">Min-Happiness = {{ evolution.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_happiness }}</span>
+                <span *ngIf="evolution.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_beauty">Min-Beauty = {{ evolution.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_beauty }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </li>
+    <li class="pokeListItem col-lg-3 col-md-4 col-sm-6">
+      <div id="evolutions-loading-trigger" class="img-holder text-center">
+        <div class="spriteBg"></div>
+      </div>
+      <h2>Loading...</h2>
+    </li>
+  </ul>
+</section>

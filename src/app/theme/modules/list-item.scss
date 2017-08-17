@@ -1,0 +1,206 @@
+.pokeList {
+  margin-bottom: 0;
+
+  h2 {
+    text-transform: capitalize;
+
+    .fa-info-circle {
+      color: $cerulean;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+    }
+  }
+
+  .pokeball-holder {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+
+    .top-half {
+      width: 30px;
+      height: 15px;
+      background: $guardsman-red;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      border-radius: 15px 15px 0 0;
+      -moz-border-radius: 15px 15px 0 0;
+      -webkit-border-radius: 15px 15px 0 0;
+    }
+
+    .bottom-half {
+      width: 30px;
+      height: 15px;
+      background: $color-white;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      border-radius: 0 0 15px 15px;
+      -moz-border-radius: 0 0 15px 15px;
+      -webkit-border-radius: 0 0 15px 15px;
+    }
+
+    .center {
+      width: 8px;
+      height: 8px;
+      background: $color-white;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      position: absolute;
+      top: 11px;
+      left: 11px;
+      z-index: 3;
+    }
+
+    i {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .img-holder {
+    min-width: 120px;
+    min-height: 200px;
+    background: $spray;
+    border-bottom: 1px solid $color-white;
+    position: relative;
+
+    img {
+      margin: 25px auto;
+      position: relative;
+      top: 40px;
+      z-index: 2;
+    }
+
+    .spriteBg {
+      width: 100%;
+      min-height: 80px;
+      background: $celery;
+      border-top: 1px solid mix($color-white, $celery, 30);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .spriteBackBtn, .spriteFrontBtn {
+      font-size: 21px;
+      color: $color-white;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+    }
+
+    .spriteBackBtn {
+      right: 15px;
+    }
+
+    .spriteFrontBtn {
+      left: 15px;
+    }
+
+    .shinyToggle, .sexToggle {
+      height: 30px;
+      font-size: 19px;
+      color: $color-white;
+      position: absolute;
+      z-index: 2;
+      cursor: pointer;
+
+      i {
+        position: relative;
+        left: 1px;
+      }
+    }
+
+    .shinyToggle {
+      width: 70px;
+      background: rgba($color-black, 0.5);
+      top: 0;
+      left: 30px;
+      border-bottom-right-radius: 6px;
+      border-bottom: 1px solid $color-black;
+      border-right: 1px solid $color-black;
+      border-left: 1px solid $color-black;
+
+      span {
+        font-size: 11px;
+        position: relative;
+        top: -3px;
+      }
+    }
+
+    .sexToggle {
+      width: 30px;
+      top: 0;
+      left: 0;
+      border-bottom: 1px solid $color-black;
+
+      &.male {
+        background: $cerulean;
+      }
+
+      &.female {
+        background: $fushia;
+      }
+    }
+  }
+
+  .pokeListItem {
+    box-sizing: border-box;
+    text-transform: capitalize;
+    border-right: 1px solid $color-black;
+    border-bottom: 1px solid $color-black;
+    background-color: $alabaster;
+    padding-left: 0;
+    padding-right: 0;
+
+    h2, p {
+      margin: 10px;
+    }
+
+    .details {
+      padding: 10px;
+      margin: 0;
+      background-color: $paradiso;
+      color: $color-white;
+      border-top: 1px solid $color-black;
+      cursor: pointer;
+    }
+
+    .details-list {
+      li {
+        border-right: 0;
+        background: $keppel;
+        border-bottom: 1px solid rgba($color-white, 0.5);
+
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        &:first-child {
+          border-top: 1px solid $color-black;
+        }
+
+        p {
+          margin: 0;
+          padding: 10px;
+        }
+      }
+    }
+
+    .moves {
+      li {
+        width: 50%;
+        display: inline-block;
+      }
+    }
+  }
+}

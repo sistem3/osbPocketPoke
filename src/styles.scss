@@ -1,0 +1,23 @@
+$poke-font-base-path: 'assets/fonts/';
+$breakpoint-large:        1200px;
+$breakpoint-large-min:    1999px;
+$breakpoint-medium:       990px;
+$breakpoint-medium-min:   989px;
+$breakpoint-small:        768px;
+$breakpoint-small-min:    767px;
+$breakpoint-x-small:      640px;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import 'app/theme/colours';
+@import 'app/theme/typography';
+@import 'app/theme/buttons';
+@import 'app/theme/icons';
+@import 'app/theme/modules/list-item';
+@import 'app/theme/modules/poke-types';
+@import 'app/main-nav/main-nav.component';
+@import 'app/pokedex/pokedex.component';
+@import 'app/evolutions/evolutions.component';
+@import 'app/locations/locations.component';
+@import 'app/berries/berries.component';
+
+
