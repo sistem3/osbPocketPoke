@@ -1,6 +1,18 @@
-# OsbPocketPoke
+# OSB Pocket Poke
+
+## Synopsis:
+
+[Angular JS](https://angular.io/) Application for displaying Pokémon based trivia powered by [Pokeapi.co](http://pokeapi.co/), it contains detailed breakdowns of each Pokémon as well as plenty of other helpful game information.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0-beta.0.
+
+## Demo: [Click Here](https://osbpocketpoke.firebaseapp.com)
+
+## Dependencies:
+* [Angular 4](https://angular.io/)
+* [Bootstrap 4](https://v4-alpha.getbootstrap.com/)
+* [Font Awesome](http://fontawesome.io)
+* [ScrollMagic](http://scrollmagic.io/)
 
 ## Development server
 
