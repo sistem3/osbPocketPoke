@@ -28,7 +28,7 @@
         <div class="spriteBg"></div>
       </div>
       <h2>{{ poke.name }}
-        <span title="More info">
+        <span title="More info" (click)="startModal(poke)">
             <i class="fa fa-info-circle"></i>
         </span>
         <span class="pull-right pokeball-holder" title="Capture Pokémon" (click)="capturePokemon(poke)">
@@ -47,4 +47,7 @@
       <h2>Loading...</h2>
     </li>
   </ul>
+</section>
+<section *ngIf="showModal && modalContent">
+  <app-modal (closeModal)="closeModal()" [overlayShowing]="showModal" [overlayContent]="modalContent" [overlayType]="'pokemon'"></app-modal>
 </section>

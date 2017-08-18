@@ -19,11 +19,14 @@ export class PokedexComponent implements OnInit, OnDestroy {
   loading: boolean;
   pageController: any;
   pageScene: any;
+  showModal: boolean;
+  modalContent: any;
 
   constructor(private pokeGatherService: PokeGatherService) { }
 
   ngOnInit() {
     this.loading = true;
+    this.showModal = false;
     this.page = 0;
     this.pageCount = 0;
     this.pageLength = 20;
@@ -42,6 +45,18 @@ export class PokedexComponent implements OnInit, OnDestroy {
       this.pageScene.destroy();
       this.pageScene = null;
     }
+  }
+
+  startModal(pokemon) {
+    console.log(pokemon);
+    this.modalContent = pokemon;
+    this.showModal = true;
+    console.log(this.showModal);
+  }
+
+  closeModal() {
+    this.showModal = false;
+    this.modalContent = null;
   }
 
   capturePokemon(pokemon) {

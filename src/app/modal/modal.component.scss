@@ -1,0 +1,80 @@
+app-modal {
+  .pokeOverlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba($color-black, 0.6);
+
+    article {
+      background: $color-white;
+      margin-top: 50px;
+      border-radius: 6px;
+      padding: 15px;
+      position: relative;
+
+      h1 {
+        margin: 0;
+        text-transform: capitalize;
+
+        img {
+          margin: 0 auto;
+        }
+      }
+
+      .base-stats {
+        display: inline-block;
+      }
+
+      .typeHolder {
+        position: relative;
+        display: inline-block;
+
+        .typeIcon {
+          text-align: center;
+        }
+      }
+
+      .close-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 21px;
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        z-index: 999;
+        text-align: center;
+      }
+
+      .details {
+        margin-bottom: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $color-black;
+      }
+
+      .details:last-child {
+        border-bottom: none;
+      }
+
+      .details-list {
+        li {
+          padding: 5px;
+        }
+
+        li:nth-child(even) {
+          background: rgba($color-black, 0.3);
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+        strong {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

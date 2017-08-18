@@ -9,6 +9,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { EvolutionsComponent } from './evolutions/evolutions.component';
 import { LocationsComponent } from './locations/locations.component';
 import { BerriesComponent } from './berries/berries.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BerriesComponent } from './berries/berries.component';
     MainNavComponent,
     EvolutionsComponent,
     LocationsComponent,
-    BerriesComponent
+    BerriesComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
