@@ -48,10 +48,8 @@ export class PokedexComponent implements OnInit, OnDestroy {
   }
 
   startModal(pokemon) {
-    console.log(pokemon);
     this.modalContent = pokemon;
     this.showModal = true;
-    console.log(this.showModal);
   }
 
   closeModal() {
